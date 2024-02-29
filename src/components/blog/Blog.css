@@ -1,0 +1,49 @@
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.blog-container .image {
+    width: 100%;
+    height: 210px;
+}
+
+.blog-container .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.blog-container .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .info {
+    display: flex;
+    gap: 10px;
+    font-size: .9rem;
+    margin: 5px 0px;
+    color: #777;
+}
+
+.content .discription {
+    margin: 10px 0px;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #111;
+}
+
+.content a {
+    color: inherit;
+}
+
+@media screen and (max-width:768px) {
+    .blog-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+}

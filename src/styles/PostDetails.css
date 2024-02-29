@@ -1,0 +1,92 @@
+.postDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.postDetails .image {
+    max-height: 200px;
+    overflow: hidden;
+    display: flex;
+}
+
+.postDetails .image img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.postDetails a {
+    color: #333;
+    text-decoration: underline;
+}
+
+.postDetails h2 {
+    text-align: center;
+}
+
+.postDetails .post-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-author p {
+    font-size: 14px;
+    color: gray;
+}
+
+.postDetails .content p {
+    line-height: 1.5rem;
+}
+
+.postDetails .editOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.postDetails .editBtn {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.postDetails .editBtn a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.postDetails .editBtn:hover {
+    background-color: #444;
+}
+
+.postDetails .editBtn svg {
+    height: 18px;
+}
+
+
+.editOptions .deletBtn {
+    background-color: #333;
+    padding: 11px;
+    border-radius: 3px;
+    color: white;
+    margin-top: 8px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: 500;
+}
+
+.editOptions .deletBtn:hover {
+    background-color: #444;
+}

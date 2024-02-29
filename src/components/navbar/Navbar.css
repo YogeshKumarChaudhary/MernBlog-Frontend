@@ -1,0 +1,34 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    margin-bottom: 30px;
+}
+
+.navbar-container nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-container .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-container a {
+    color: inherit;
+}
+
+.navbar-container nav p {
+    cursor: pointer;
+}
+
+@media screen and (max-width:400px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 0px;
+    }
+}
