@@ -39,7 +39,7 @@ const Register = () => {
   };
 
   if (redirect) {
-    return <Navigate to="/" />;
+    return <Navigate to="/login" />;
   }
   return (
     <form className="form" onSubmit={handlSubmit}>
