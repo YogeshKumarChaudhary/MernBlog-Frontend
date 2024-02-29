@@ -9,7 +9,7 @@ const Navbar = () => {
   // console.log(userInfo);
   useEffect(() => {
     const fetchuser = async () => {
-      const res = await axios.get("http://localhost:5000/api/profile", {
+      const res = await axios.get("https://mernblog-backend-0sxq.onrender.com/api/profile", {
         withCredentials: true,
       });
       // console.log(res.data.username);
@@ -18,7 +18,7 @@ const Navbar = () => {
     fetchuser();
   }, []);
   const logout = async () => {
-    const res = await axios.post("http://localhost:5000/api/logout", {
+    const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/logout", {
       withCredentials: true,
     });
     // console.log(res);

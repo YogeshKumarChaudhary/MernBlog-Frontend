@@ -19,7 +19,7 @@ const Register = () => {
   const handlSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/register", input);
+      const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/register", input);
       // console.log(res);
       if (res?.status === 201) {
         res?.status && <Navigate to="/" />;

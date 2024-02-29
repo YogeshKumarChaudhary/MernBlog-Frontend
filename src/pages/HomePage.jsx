@@ -6,7 +6,7 @@ const HomePage = () => {
   const [post, setPost] = useState([]);
   useEffect(() => {
     const fetchAllPost = async () => {
-      const res = await axios.get("http://localhost:5000/api/post");
+      const res = await axios.get("https://mernblog-backend-0sxq.onrender.com/api/post");
       console.log(res);
       setPost(res.data);
     };

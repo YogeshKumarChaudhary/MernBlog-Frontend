@@ -7,7 +7,7 @@ const Blog = ({ data }) => {
     <section className="blog-container">
       <div className="image">
         <Link to={`/post/${data._id}`}>
-          <img src={`http://localhost:5000/` + data.cover} alt={data.title} />
+          <img src={`https://mernblog-backend-0sxq.onrender.com/` + data.cover} alt={data.title} />
         </Link>
       </div>
       <div className="content">

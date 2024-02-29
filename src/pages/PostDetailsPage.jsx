@@ -12,7 +12,7 @@ const PostDetailsPage = () => {
   // console.log(id);
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const res = await axios.get(`http://localhost:5000/api/post/${id}`);
+      const res = await axios.get(`https://mernblog-backend-0sxq.onrender.com/api/post/${id}`);
       console.log(res);
       setPostDetail(res.data);
     };
@@ -20,7 +20,7 @@ const PostDetailsPage = () => {
   }, []);
 
   const handlDelete = async () => {
-    const res = await axios.delete(`http://localhost:5000/api/post/${id}`);
+    const res = await axios.delete(`https://mernblog-backend-0sxq.onrender.com/api/post/${id}`);
     console.log("post Deleted ", res);
     if (res.status === 200) {
       setRedirect(true);
@@ -65,7 +65,7 @@ const PostDetailsPage = () => {
       </div>
       <div className="image">
         <img
-          src={`http://localhost:5000/${postDetail.cover}`}
+          src={`https://mernblog-backend-0sxq.onrender.com/${postDetail.cover}`}
           alt={postDetail.title}
         />
       </div>

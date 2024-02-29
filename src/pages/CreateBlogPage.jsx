@@ -19,7 +19,7 @@ const CreateBlogPage = () => {
     data.set("file", file[0]);
     data.set("content", content);
 
-    const res = await axios.post("http://localhost:5000/api/post", data, {
+    const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/post", data, {
       withCredentials: true,
     });
     // console.log(res);

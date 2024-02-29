@@ -14,7 +14,7 @@ const EditBlogPage = () => {
 
   useEffect(() => {
     const getPostDetails = async () => {
-      const res = await axios.get(`http://localhost:5000/api/post/${id}`);
+      const res = await axios.get(`https://mernblog-backend-0sxq.onrender.com/api/post/${id}`);
       // console.log(res);
       if (res.status === 200) {
         setTitle(res?.data?.title);
@@ -36,7 +36,7 @@ const EditBlogPage = () => {
       data.set("file", file?.[0]);
     }
 
-    const res = await axios.put("http://localhost:5000/api/post", data, {
+    const res = await axios.put("https://mernblog-backend-0sxq.onrender.com/api/post", data, {
       withCredentials: true,
     });
     console.log(res);

@@ -21,7 +21,7 @@ const Login = () => {
   const handlSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/login", input, {
+      const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/login", input, {
         withCredentials: true,
       });
       console.log(res.data);
