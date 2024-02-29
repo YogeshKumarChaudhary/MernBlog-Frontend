@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Editor from "../components/Editor";
+import toast from "react-hot-toast";
 
 const EditBlogPage = () => {
   const { id } = useParams();
@@ -14,7 +15,9 @@ const EditBlogPage = () => {
 
   useEffect(() => {
     const getPostDetails = async () => {
-      const res = await axios.get(`https://mernblog-backend-0sxq.onrender.com/api/post/${id}`);
+      const res = await axios.get(
+        `https://mernblog-backend-0sxq.onrender.com/api/post/${id}`
+      );
       // console.log(res);
       if (res.status === 200) {
         setTitle(res?.data?.title);
@@ -36,12 +39,17 @@ const EditBlogPage = () => {
       data.set("file", file?.[0]);
     }
 
-    const res = await axios.put("https://mernblog-backend-0sxq.onrender.com/api/post", data, {
-      withCredentials: true,
-    });
-    console.log(res);
+    const res = await axios.put(
+      "https://mernblog-backend-0sxq.onrender.com/api/post",
+      data,
+      {
+        withCredentials: true,
+      }
+    );
+    // console.log(res);
     if (res.status === 200) {
       setRedirect(true);
+      toast.success("Post Updated successfully");
     }
   };
 

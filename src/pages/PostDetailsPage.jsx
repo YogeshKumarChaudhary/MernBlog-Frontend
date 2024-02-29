@@ -12,18 +12,23 @@ const PostDetailsPage = () => {
   // console.log(id);
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const res = await axios.get(`https://mernblog-backend-0sxq.onrender.com/api/post/${id}`);
-      console.log(res);
+      const res = await axios.get(
+        `https://mernblog-backend-0sxq.onrender.com/api/post/${id}`
+      );
+      // console.log(res);
       setPostDetail(res.data);
     };
     fetchPostDetails();
   }, []);
 
   const handlDelete = async () => {
-    const res = await axios.delete(`https://mernblog-backend-0sxq.onrender.com/api/post/${id}`);
-    console.log("post Deleted ", res);
+    const res = await axios.delete(
+      `https://mernblog-backend-0sxq.onrender.com/api/post/${id}`
+    );
+    // console.log("post Deleted ", res);
     if (res.status === 200) {
       setRedirect(true);
+      toast.success("Post Deleted successfully");
     }
   };
 

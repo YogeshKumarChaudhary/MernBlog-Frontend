@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [redirect, setRedirect] = useState(false);
@@ -19,11 +20,14 @@ const Register = () => {
   const handlSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/register", input);
+      const res = await axios.post(
+        "https://mernblog-backend-0sxq.onrender.com/api/register",
+        input
+      );
       // console.log(res);
       if (res?.status === 201) {
         res?.status && <Navigate to="/" />;
-        alert("Registration SuccessFully");
+        toast.success("Registration successfully");
         setInput({
           username: "",
           password: "",
@@ -31,9 +35,9 @@ const Register = () => {
         setRedirect(true);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       if (error.status !== 201) {
-        alert("Registration Faild!");
+        toast.error("Enter Valid Username and Password!");
       }
     }
   };

@@ -3,6 +3,7 @@ import "../../styles/Form.css";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import { useUserContext } from "../../UserContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { userInfo, setUserInfo } = useUserContext();
@@ -21,15 +22,21 @@ const Login = () => {
   const handlSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/login", input, {
-        withCredentials: true,
-      });
-      console.log(res.data);
+      const res = await axios.post(
+        "https://mernblog-backend-0sxq.onrender.com/api/login",
+        input,
+        {
+          withCredentials: true,
+        }
+      );
+      // console.log(res.data);
       setUserInfo(res.data);
+      toast.success("Login successfully");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       if (error.status !== 200) {
-        alert("Wrong Credencials!");
+        toast.error("Enter Valid Username and Password!");
+        // alert("Wrong Credencials!");
       }
     }
   };

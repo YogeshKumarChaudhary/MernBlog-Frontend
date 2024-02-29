@@ -7,7 +7,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchAllPost = async () => {
       const res = await axios.get("https://mernblog-backend-0sxq.onrender.com/api/post");
-      console.log(res);
+      // console.log(res);
       setPost(res.data);
     };
     fetchAllPost();

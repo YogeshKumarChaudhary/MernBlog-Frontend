@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Editor from "../components/Editor";
 import { useUserContext } from "../UserContext";
+import toast from "react-hot-toast";
 
 const CreateBlogPage = () => {
   const { userInfo } = useUserContext();
@@ -23,9 +24,13 @@ const CreateBlogPage = () => {
     data.set("content", content);
     data.set("id", userInfo?.id);
 
-    const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/post", data);
+    const res = await axios.post(
+      "https://mernblog-backend-0sxq.onrender.com/api/post",
+      data
+    );
     // console.log(res);
     if (res.status === 200) {
+      toast.success("Post Created successfully");
       setRedirect(true);
     }
   };
