@@ -2,8 +2,11 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Editor from "../components/Editor";
+import { useUserContext } from "../UserContext";
 
 const CreateBlogPage = () => {
+  const { userInfo } = useUserContext();
+  // console.log(userInfo);
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [file, setFile] = useState("");
@@ -18,10 +21,9 @@ const CreateBlogPage = () => {
     // console.log(file[0]);
     data.set("file", file[0]);
     data.set("content", content);
+    data.set("id", userInfo?.id);
 
-    const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/post", data, {
-      withCredentials: true,
-    });
+    const res = await axios.post("https://mernblog-backend-0sxq.onrender.com/api/post", data);
     // console.log(res);
     if (res.status === 200) {
       setRedirect(true);
