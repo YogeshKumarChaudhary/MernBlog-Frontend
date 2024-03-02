@@ -8,7 +8,10 @@ const Blog = ({ data }) => {
     <section className="blog-container">
       <div className="image">
         <Link to={`/post/${data._id}`}>
-          <img src={`https://mernblog-backend-0sxq.onrender.com/` + data.cover} alt={data.title} />
+          <img
+            src={`https://mernblog-backend-0sxq.onrender.com/${data?.cover}`}
+            alt={"Imgage Not Found"}
+          />
         </Link>
       </div>
       <div className="content">
@@ -19,7 +22,7 @@ const Blog = ({ data }) => {
           <p>{data.author.username}</p>
           <time>{data.createdAt.slice(0, 10)}</time>
         </div>
-        <p className="discription">{data.summary.slice(0,140)+"..."}</p>
+        <p className="discription">{data.summary.slice(0, 140) + "..."}</p>
       </div>
     </section>
   );
