@@ -3,13 +3,13 @@ import "./Blog.css";
 import { Link } from "react-router-dom";
 
 const Blog = ({ data }) => {
-  // console.log(data);
+  console.log(data);
   return (
     <section className="blog-container">
       <div className="image">
         <Link to={`/post/${data._id}`}>
           <img
-            src={`https://mernblog-backend-0sxq.onrender.com/${data?.cover}`}
+            src={`https://mernblog-backend-0sxq.onrender.com/${data.cover}`}
             alt={"Imgage Not Found"}
           />
         </Link>
