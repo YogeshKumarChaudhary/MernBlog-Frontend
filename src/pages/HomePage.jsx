@@ -38,7 +38,7 @@ const HomePage = () => {
   // const [blogs, setBlogs] = useState(blogData);
   return (
     <main>
-      {post.map((blog, index) => (
+      {post?.map((blog, index) => (
         <Blog key={index} data={blog} />
       ))}
     </main>
