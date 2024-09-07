@@ -26,7 +26,7 @@ const Navbar = () => {
   };
   return (
     <header className="navbar-container">
-      <Link to="/reactBlog" className="logo">
+      <Link to="/" className="logo">
         MyBlog
       </Link>
       <nav>
