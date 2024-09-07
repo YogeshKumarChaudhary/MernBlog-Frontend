@@ -24,10 +24,7 @@ const Login = () => {
     try {
       const res = await axios.post(
         "https://mernblog-backend-0sxq.onrender.com/api/login",
-        input,
-        {
-          withCredentials: true,
-        }
+        input
       );
       // console.log(res.data);
       setUserInfo(res.data);
